@@ -7,7 +7,7 @@ import json
 chars = string.ascii_letters + string.digits + '!@#$%^&*()'
 random.seed = (os.urandom(1024))
 
-url = '' #put the request url of the login
+url = input("Enter the request url of the scam website: ") #put the request url of the login
 
 names = json.loads(open('names.json').read())
 
@@ -18,8 +18,8 @@ for name in names:
 	password = ''.join(random.choice(chars) for i in range(8))
 
 	requests.post(url, allow_redirects=False, data={
-		'auid2yjauysd2uasdasdasd': username,
-		'kjauysd6sAJSDhyui2yasd': password
+		'email': username, #Modify this, depends on the website post requesr of the username and password
+		'password': password
 	})
 
-	print 'sending username %s and password %s' % (username, password)
+	print('sending username %s and password %s') % (username, password)
