@@ -14,7 +14,7 @@ names = json.loads(open('names.json').read())
 for name in names:
     name_extra = ''.join(random.choice(string.digits))
 
-    username = name.lower() + name_extra + '@yahoo.com'
+    username = name.lower() + name_extra + '@gmail.com'
     password = ''.join(random.choice(chars) for i in range(8))
 
     response = requests.post(url, allow_redirects=True, data={
