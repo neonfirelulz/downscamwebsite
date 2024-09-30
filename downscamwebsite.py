@@ -18,7 +18,7 @@ for name in names:
     password = ''.join(random.choice(chars) for i in range(8))
 
     response = requests.post(url, allow_redirects=True, data={
-        'email': username, #Modify this, depends on the website post requesr of the username and password
+        'email': username, #Modify this, depends on the website post request of the username and password
         'password': password
     })
 
